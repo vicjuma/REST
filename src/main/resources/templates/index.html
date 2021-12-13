@@ -27,12 +27,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="s : ${student}">
+        <tr th:each="s : ${employee}">
             <td scope="col" th:text="${s.name}"></td>
             <td scope="col" th:text="${s.jurusan}"></td>
             <td scope="col">
                 <a class="btn btn-primary" role="button" th:href="${'/edit/'+s.id}"><span>Edit</span></a>
-                <a class="btn btn-danger" role="button" th:href="${'/hapus/'+s.id}"><span>Remove</span></a>
+                <a class="btn btn-danger" role="button" th:href="${'/delete/'+s.id}"><span>Remove</span></a>
             </td>
         </tr>
         </tbody>

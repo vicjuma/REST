@@ -27,8 +27,8 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/create")
-    public String create2(Model model, Employee student) {
-        model.addAttribute("employee", employeeRepository.save(student));
+    public String create2(Model model, Employee employee) {
+        model.addAttribute("employee", employeeRepository.save(employee));
         return "redirect:/";
     }
 
@@ -38,7 +38,7 @@ public class EmployeeController {
         return "formEmployee";
     }
 
-    @GetMapping(value = "/senior/{id}")
+    @GetMapping(value = "/delete/{id}")
     public String seniorEmployee(@PathVariable Integer id) {
         employeeRepository.deleteById(id);
         return "redirect:/";

@@ -12,15 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-/**
- * Created by IntelliJ IDEA.
- * Project : springboot-thymeleaf-postgres
- * User: hendisantika
- * Email: hendisantika@gmail.com
- * Telegram : @hendisantika34
- * Date: 25/03/20
- * Time: 06.03
- */
 @Entity
 @Table(name = "employee")
 @Data
@@ -29,6 +20,7 @@ import javax.persistence.Version;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Integer id;
 
     private String name;
@@ -42,5 +34,21 @@ public class Employee {
     public Employee(String name, String jurusan) {
         this.name = name;
         this.jurusan = jurusan;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setJurusan(String jurusan) {
+        this.jurusan = jurusan;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getJurusan() {
+        return jurusan;
     }
 }
